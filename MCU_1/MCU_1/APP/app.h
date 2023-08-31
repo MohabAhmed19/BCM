@@ -9,9 +9,9 @@
 #ifndef APP_H_
 #define APP_H_
 
-#include "../MCAL/bcm/BCM.h"
+#include "../HAL/LED/LED.h"
 #include "../MCAL/timer0/TMR0_interface.h"
-#include "../MCAL/dio/DIO_interface.h"
+
 
 void APP1_init(void);
 

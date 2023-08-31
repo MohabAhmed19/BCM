@@ -17,7 +17,7 @@ void receive_callback(uint8_t *ptr,int n_data)
 	{
 		DIO_togglepin(DIO_PORTC, DIO_PIN1);
 		TMR0_delayms(500);
-		bcm_send_n("Confirm BCM operating\r",22);
+		bcm_send_n(&str_bcm_instance_ch_0,"Confirm BCM operating\r",22);
 	}
 	
 }
@@ -25,14 +25,13 @@ void receive_callback(uint8_t *ptr,int n_data)
 
 void APP2_init(void)
 {
-	int buffer[20];
-	str_bcm_instance_ch_0.receive_callback=receive_callback;
-	str_bcm_instance_ch_0.send_callback=send_callback;
-	if(SUCCESS == bcm_init(&str_bcm_instance_ch_0))
+
+	
+	if(SUCCESS ==bcm_init(&str_bcm_instance_ch_0,send_callback,receive_callback))
 	{
-		DIO_setpindir(DIO_PORTC, DIO_PIN0, DIO_PIN_OUTPUT);
-		DIO_setpindir(DIO_PORTC, DIO_PIN1, DIO_PIN_OUTPUT);
-	};
+		LED_init(DIO_PORTC, DIO_PIN0);
+		LED_init(DIO_PORTC, DIO_PIN1);
+	}
 }
 
 void APP2(void)

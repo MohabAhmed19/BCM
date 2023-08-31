@@ -11,6 +11,8 @@
 
 #define nullPtr ((void*)0)
 
+#define NULL 0
+
 typedef unsigned char uint8_t;          /* 1-BYTE UNSIGNED DATA (0 - 255)                */
 typedef signed char   sint8_t;          /* 1-BYTE SIGNED DATA   (0 - 127) or (-1 - -128) */
 

@@ -309,7 +309,7 @@ PinValue_t DIO_setportvalue(uint8_t u8_a_portid , uint8_t u8_a_portval)
 /*@param u8_l_portNumber        port number                                                */
 /*@param u8_l_value             mask desired state                                         */
 /*******************************************************************************************/
-void DIO_array_write(uint8_t u8_l_mask, uint8_t u8_l_portNumber, uint8_t u8_l_value)
+uint8_t DIO_array_write(uint8_t u8_l_mask, uint8_t u8_l_portNumber, uint8_t u8_l_value)
 {
 	switch(u8_l_portNumber)
 	{
@@ -325,7 +325,7 @@ void DIO_array_write(uint8_t u8_l_mask, uint8_t u8_l_portNumber, uint8_t u8_l_va
 		else
 		{
 			// Error Handling
-			return ;
+			return 1;
 		}
 		break;
 		
@@ -341,7 +341,7 @@ void DIO_array_write(uint8_t u8_l_mask, uint8_t u8_l_portNumber, uint8_t u8_l_va
 		else
 		{
 			// Error Handling
-			return ;
+			return 1;
 		}
 		break;
 		
@@ -357,7 +357,7 @@ void DIO_array_write(uint8_t u8_l_mask, uint8_t u8_l_portNumber, uint8_t u8_l_va
 		else
 		{
 			// Error Handling
-			return ;
+			return 1;
 		}
 		break;
 		
@@ -373,12 +373,12 @@ void DIO_array_write(uint8_t u8_l_mask, uint8_t u8_l_portNumber, uint8_t u8_l_va
 		else
 		{
 			// Error Handling
-			return ;
+			return 1 ;
 		}
 		break;
 		
 		default:
-		return ;
+		return 1;
 	}
-	return ;
+	return 0;
 }

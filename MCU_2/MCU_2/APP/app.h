@@ -9,7 +9,7 @@
 #ifndef APP_H_
 #define APP_H_
 
-#include "../MCAL/bcm/BCM.h"
+#include "../SERV/bcm/BCM.h"
 #include "../MCAL/timer0/TMR0_interface.h"
 #include "../MCAL/dio/DIO_interface.h"
 

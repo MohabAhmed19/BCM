@@ -105,6 +105,6 @@ PinRead_t DIO_readpin(uint8_t u8_a_portid , uint8_t u8_a_pinid , uint8_t* u8_a_v
 PinRead_t DIO_togglepin(uint8_t u8_a_portid , uint8_t u8_a_pinid );
 
 
-void DIO_array_write(uint8_t u8_l_mask, uint8_t u8_l_portNumber, uint8_t u8_l_value);
+uint8_t DIO_array_write(uint8_t u8_l_mask, uint8_t u8_l_portNumber, uint8_t u8_l_value);
 
 #endif
